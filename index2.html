@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href-"#">Menu 2</a></li>
+    </ul>
+    <script>
+
+    // DOM Document คือ เว็บเพจที่เราสนใจ Object คือ ออบเจ็กต์ของเว็บเพจ Model รูปแบบความสัมพันธ์ระหว่างออบเจ็กต์ทั้งหมด
+    // ออบเจ็กต์แต่ล่ะส่วนจะถูกเรียกว่า Node 
+    // ในแต่ล่ะแท็กจะถือว่าเป็น 1 โหนด โดยแต่ล่ะโหนด สามารถแบ่งได้เป็นประเภทย่อยๆ ได้หลายประเภท แต่ที่เราสนใจคือ
+    // - Node.ELEMENT คือ โหนดที่เป็นแท็ก เช่น <a>
+    // - Node.ATTRIBUTE คือ โหนดที่แสดงชื่อแอตทริบิวต์ เช่น href="link"
+    // - Node.TEXT คือ โหนดที่เก็บข้อความที่แสดงบทแท็กนั้นๆ เช่น <a href="#">โปรดคลิก</a>
+    // - Node.COMMENT คือ โหนดที่เก็บข้อความที่เป็ฯคำอธิบาย
+
+    var myTitle = document.getElementsByTagName("title"); // return array
+    var myLists = document.getElementsByTagName("li");
+    var myLinks = document.getElementsByTagName("a");
+    console.log("ประเภทของ Element ในปัจจุบัน คือ " + myLists[0].nodeType); // อ๊อบเจ็กต์ คือ node
+    console.log("ข้อความที่อยู่ในโหนด คือ " + myTitle[0].innerHTML); 
+    console.log("จำนวนลิงค์ที่อยู่ในเว็บเพจทั้งหมด คือ" + myLinks.length);
+    console.log("ข้อความที่อยู่ในลิงค์ที่สอง คือ " + myLinks[1].innerHTML);
+    </script>
+</body>
+</html>
