@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <script>
+    //เมธอด Object.create() สร้างออบเจ็กต์ var Object พร้อมทั้งระบุโปรโตไทป์ให้กับออบเจ็กต์ที่ถูกสร้างขึ้นมาด้วย 
+    // การที่ redCar กับ blueCar สามารถแชร์สมาชิกของ car มาใช้งานได้ มันก็คือการสืบทอดสมาชิกนั้นเอง จึงอาจมองได้ว่าโปร์โตไทป์ของ car เป็นออบเจ็กต์แม่ ซึ้งมี
+    // ออบเจ็กต์ลูกได้แก่ redCar กับ blueCar มาสืบทอดสมาชิกไปใช้งาน (แต่เป็นการสืบทอดในระดับออบเจ็กต์)
+    var car = {
+        a: 1
+    };
+    var redCar = Object.create(car);
+    var blueCar = Object.create(car,{
+        foo: { writable: true, configurable: true, value: 1 }, // descriptor
+    });
+   redCar.a;
+   blueCar.a;
+    console.log(blueCar.foo + blueCar.a);
+    </script>
+</body>
+</html>
